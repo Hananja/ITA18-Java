@@ -1,42 +1,24 @@
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import java.util.ArrayList;
+import java.util.Collection;
 
+@RequiredArgsConstructor
 public class Person {
+    @NonNull @Setter private static String greeting = "Hello";
 
-    private String firstname;
-    private String lastname;
-    private ArrayList<Address> addresses;
+    @NonNull @Getter @Setter private String firstname;
+    @NonNull @Getter @Setter private String lastname;
+    @Getter private ArrayList<Address> addresses = new ArrayList<>();;
 
-
-    public static void setGreeting(String greeting) {
-        Person.greeting = greeting;
-    }
-
-    public Person(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.addresses = new ArrayList<>();
-    }
-
-    private static String greeting = "Hello";
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
+    /**
+     * Get greeting.
+     * @return Build and return greeting with full name
+     */
     public String getGreeting() {
-        return greeting + " " + getFirstname() + " " + getLastname() + "!";
+        return greeting + " " + getFullName() + "!";
     }
 
     /**
@@ -90,11 +72,10 @@ public class Person {
         addresses.clear();
     }
 
-
-    public ArrayList<Address> getAddresss() {
-        return addresses; // Referenz kann außerhalb verändert werden
-    }
-
+    /**
+     * Build full Name with first and lastname.
+     * @return full name of person
+     */
     public String getFullName() {
         return getFirstname() + " " + getLastname();
     }

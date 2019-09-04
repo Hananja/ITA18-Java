@@ -35,7 +35,7 @@ public class Main {
         p2.addAddress(a1);
         p2.addAddress(a2);
 
-        for( Address address: p2.getAddresss()) {
+        for( Address address: p2.getAddresses()) {
             System.out.println(p2.getFullName());
             System.out.println(address);
             System.out.println();
