@@ -16,7 +16,7 @@ public class Gui extends Application {
                 getClass().getClassLoader().getResource("char_stat.fxml"),
                 "FXML resource not found"));
         primaryStage.setTitle("TextStat");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 800, 600 ));
         primaryStage.show();
     }
 
